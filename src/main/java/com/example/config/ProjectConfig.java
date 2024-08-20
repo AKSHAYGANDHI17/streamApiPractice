@@ -1,4 +1,5 @@
 package com.example.config;
+import com.example.beans.Employee;
 import com.example.beans.Programs;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,7 +20,7 @@ configuration class.
 * */
 @Configuration
 @ComponentScan(basePackages = {"com.example.implementation", "com.example.services"})
-@ComponentScan(basePackageClasses = {Programs.class})
+@ComponentScan(basePackageClasses = {Programs.class, Employee.class})
 public class ProjectConfig {
 
 }
