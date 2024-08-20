@@ -20,21 +20,24 @@ public class ExampleServices {
     @Autowired
     final public Example2 empDetails;
 
+    public ExampleServices(Example1 evenodd, Example2 empDetails) {
+        this.evenodd = evenodd;
+        this.empDetails = empDetails;
+    }
 
 
     public List<Integer> getEvenNo() {
         return evenodd.evenOdd();
     }
-    public Example2 getEmpDetails() {
-        return empDetails;
+
+    public List<Employee> getEmpDetails() {
+        return empDetails.empDeatils();
     }
+
+
 
 }
 
-    public ExampleServices(Example1 evenodd, Example2 empDetails) {
-        this.evenodd = evenodd;
-        this.empDetails = empDetails;
-    }
 
 
 

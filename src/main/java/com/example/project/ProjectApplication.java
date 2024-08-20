@@ -23,18 +23,7 @@ public class ProjectApplication {
 		Programs vehicle = context.getBean(Programs.class);
 		List<Integer>  evenNumbers = vehicle.getExampleServices().getEvenNo();
 		System.out.println("The Even Number is " + evenNumbers);
-		//List<Employee>  empDeatils = vehicle.getExampleServices().getEmpDetails();
-
-		List<Employee> employees = Arrays.asList(
-				new Employee("Alice", 30, 60000, "HR"),
-				new Employee("Bob", 25, 48000, "Engineering"),
-				new Employee("Charlie", 35, 52000, "Engineering"),
-				new Employee("David", 28, 49000, "HR"),
-				new Employee("Eve", 40, 55000, "Finance")
-		);
-
-		List<Employee> empDeatils = employees.stream().filter(e -> e.getSalary() > 50000).sorted((e1, e2) -> e1.getName().compareTo(e2.getName())).collect(Collectors.toList());
-
+		List <Employee>  empDeatils = vehicle.getExampleServices().getEmpDetails();
 		System.out.println("The Employees  is " + empDeatils);
 
 

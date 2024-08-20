@@ -2,11 +2,16 @@ package com.example.implementation;
 
 import com.example.beans.Employee;
 import com.example.interfaces.Example2;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+@Component
+@Primary
 public class EmployeeDetails implements Example2 {
     @Override
     public List<Employee> empDeatils() {
