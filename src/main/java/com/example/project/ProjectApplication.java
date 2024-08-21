@@ -10,7 +10,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.io.LineNumberInputStream;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -25,6 +27,14 @@ public class ProjectApplication {
 		System.out.println("The Even Number is " + evenNumbers);
 		List <Employee>  empDeatils = vehicle.getExampleServices().getEmpDetails();
 		System.out.println("The Employees  is " + empDeatils);
+		List<Integer> number =  Arrays.asList(10,20,30);
+
+		int sumNumber1 = number.stream().reduce(1,(i, j) -> i + j);
+        int multiplyNumber1 = number.stream().reduce(1,(i, j) -> i * j);
+
+		List<Integer> sumNumber = Collections.singletonList(number.stream().mapToInt(i -> i).sum());
+		System.out.println(sumNumber1);
+        System.out.println(multiplyNumber1);
 
 
 
