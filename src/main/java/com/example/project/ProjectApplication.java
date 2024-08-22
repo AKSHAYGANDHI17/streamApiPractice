@@ -9,10 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.LineNumberInputStream;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -35,6 +32,23 @@ public class ProjectApplication {
 		List<Integer> sumNumber = Collections.singletonList(number.stream().mapToInt(i -> i).sum());
 		System.out.println(sumNumber1);
         System.out.println(multiplyNumber1);
+
+		int minNo = number.stream().min(Integer::compareTo).orElse(0);
+		System.out.println("Min vale" + minNo);
+
+		int maxNo = number.stream().max(Integer::compareTo).orElse(0);
+		System.out.println("Max vale" + maxNo);
+
+		IntSummaryStatistics stats = number.stream()
+				.mapToInt(Integer::intValue)
+				.summaryStatistics();
+
+		int minNumber = stats.getMin();
+		int maxNumber = stats.getMax();
+
+		System.out.println("stats: " + stats);
+		System.out.println("The minimum number is: " + minNumber);
+		System.out.println("The maximum number is: " + maxNumber);
 
 
 
