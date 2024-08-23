@@ -50,6 +50,11 @@ public class ProjectApplication {
 		System.out.println("The minimum number is: " + minNumber);
 		System.out.println("The maximum number is: " + maxNumber);
 
+		//Convert a string list to integer list and parse it to integer
+
+		List<String> sringNumbers = Arrays.asList("2","8","89","23","67","90","55");
+		List<Integer> newSnumber = sringNumbers.stream().map(Integer::parseInt).collect(Collectors.toList());
+		System.out.println(newSnumber);
 
 
 	}
