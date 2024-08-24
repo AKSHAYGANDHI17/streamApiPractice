@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.LineNumberInputStream;
+import java.io.Serializable;
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -56,6 +57,10 @@ public class ProjectApplication {
 		List<Integer> newSnumber = sringNumbers.stream().map(Integer::parseInt).collect(Collectors.toList());
 		System.out.println(newSnumber);
 
+		List<String> numberNull =  Arrays.asList("10","20",null,"30",null,"");
+
+		List<String> numList = numberNull.stream().filter(Objects::nonNull).filter(str -> !str.trim().isEmpty()).collect(Collectors.toList());
+		System.out.println(numList);
 
 	}
 }
