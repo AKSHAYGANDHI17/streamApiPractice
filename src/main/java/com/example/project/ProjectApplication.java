@@ -62,5 +62,10 @@ public class ProjectApplication {
 		List<String> numList = numberNull.stream().filter(Objects::nonNull).filter(str -> !str.trim().isEmpty()).collect(Collectors.toList());
 		System.out.println(numList);
 
+		List<String> stringList = Arrays.asList("Tata","Consultancy","Services","Metlife");
+
+		String lists = stringList.stream().collect(Collectors.joining(","));
+		System.out.println(lists);
+
 	}
 }
