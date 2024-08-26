@@ -67,5 +67,8 @@ public class ProjectApplication {
 		String lists = stringList.stream().collect(Collectors.joining(","));
 		System.out.println(lists);
 
+        long countoString = Arrays.stream(lists.split(",")).count();
+        System.out.println(countoString);
+
 	}
 }
