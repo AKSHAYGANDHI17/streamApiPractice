@@ -70,5 +70,8 @@ public class ProjectApplication {
         long countoString = Arrays.stream(lists.split(",")).count();
         System.out.println(countoString);
 
+		String value = "Akshay";
+		List<String> values = Arrays.stream(value.split("")).collect(Collectors.toList());
+		System.out.println(values);
 	}
 }
