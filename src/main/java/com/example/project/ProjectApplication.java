@@ -70,8 +70,15 @@ public class ProjectApplication {
         long countoString = Arrays.stream(lists.split(",")).count();
         System.out.println(countoString);
 
-		String value = "Akshay";
+		String value = "akshay";
 		List<String> values = Arrays.stream(value.split("")).collect(Collectors.toList());
 		System.out.println(values);
-	}
+
+        List<Character> valuess = value.chars().mapToObj(c ->(char) c).collect(Collectors.toList());
+        System.out.println(valuess);
+
+        Map<Character, Long> valuesss = value.chars().mapToObj(c ->(char) c).collect(Collectors.groupingBy(c -> c,Collectors.counting()));
+        System.out.println(valuesss);
+
+    }
 }
