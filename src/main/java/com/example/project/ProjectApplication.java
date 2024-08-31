@@ -78,7 +78,13 @@ public class ProjectApplication {
         System.out.println(valuess);
 
         Map<Character, Long> valuesss = value.chars().mapToObj(c ->(char) c).collect(Collectors.groupingBy(c -> c,Collectors.counting()));
-        System.out.println(valuesss);
+
+
+        Optional<Integer> thirdHigh  = number.stream().sorted((a, b) -> b-a).skip(2).findFirst();
+        System.out.println(thirdHigh);
+
+        
+        
 
     }
 }
