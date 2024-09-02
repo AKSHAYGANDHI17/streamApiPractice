@@ -35,10 +35,10 @@ public class ProjectApplication {
 		System.out.println(multiplyNumber1);
 
 		int minNo = number.stream().min(Integer::compareTo).orElse(0);
-		System.out.println("Min vale" + minNo);
+		System.out.println("Min value " + minNo);
 
 		int maxNo = number.stream().max(Integer::compareTo).orElse(0);
-		System.out.println("Max vale" + maxNo);
+		System.out.println("Max value " + maxNo);
 
 		IntSummaryStatistics stats = number.stream()
 				.mapToInt(Integer::intValue)
@@ -90,5 +90,7 @@ public class ProjectApplication {
 		System.out.println(setofEven);
 		int EvenSum = setOfnum.stream().filter(e -> e % 2 == 0).reduce(0, (e, j) -> e + j);
 		System.out.println(EvenSum);
-	}
+
+        setofEven.stream().forEach(System.out::println);
+    }
 }
